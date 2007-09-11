@@ -23,6 +23,7 @@ BuildRequires:  SDL-devel
 BuildRequires:  SDL_mixer-devel
 BuildRequires:  esound-devel
 BuildRequires:	desktop-file-utils
+Buildrequires:	recode
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
