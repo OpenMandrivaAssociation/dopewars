@@ -24,7 +24,6 @@ BuildRequires:  SDL_mixer-devel
 BuildRequires:  esound-devel
 BuildRequires:	desktop-file-utils
 Buildrequires:	recode
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 Based on John E. Dell's old Drug Wars game, dopewars is a simulation of an    
