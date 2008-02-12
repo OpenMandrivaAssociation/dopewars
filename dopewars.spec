@@ -30,7 +30,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}
 Based on John E. Dell's old Drug Wars game, dopewars is a simulation of an    
 imaginary drug market.  dopewars is an All-American game which features       
 buying, selling, and trying to get past the cops!                              
-                                                                                
+
 The first thing you need to do is pay off your debt to the Loan Shark. After   
 that, your goal is to make as much money as possible (and stay alive)! You     
 have one month of game time to make your fortune.                              
