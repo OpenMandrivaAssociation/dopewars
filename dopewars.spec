@@ -53,7 +53,7 @@ perl -p -i -e 's|DPDATADIR|\"%{_datadir}\"|' src/dopewars.c
 %install
 rm -rf %{buildroot}
 %{makeinstall_std}
-install -d %{buildroot}{%{_gamesdatadir},%{_sysconfdir},%{_localstatedir}/games}
+install -d %{buildroot}{%{_gamesdatadir},%{_sysconfdir},%{_localstatedir}/lib/games}
 mv %{buildroot}%{_gamesdatadir}/{doc,gnome,locale,pixmaps} $RPM_BUILD_ROOT%{_datadir}/
 install -m 644 doc/example-cfg  %{buildroot}%{_sysconfdir}/%{name}
 
@@ -92,8 +92,8 @@ desktop-file-install --vendor="" \
 #EOF
 
 # create highscore file
-install -d %{buildroot}%{_localstatedir}/games
-touch %{buildroot}%{_localstatedir}/games/%{name}.sco
+install -d %{buildroot}%{_localstatedir}/lib/games
+touch %{buildroot}%{_localstatedir}/lib/games/%{name}.sco
 
 %clean
 rm -rf %{buildroot}
@@ -111,7 +111,7 @@ rm -rf %{buildroot}
 %config(noreplace) %{_sysconfdir}/%{name}
 %{_libdir}/%{name}
 %attr(2755,root,games) %{_gamesbindir}/dopewars
-%attr(0664,root,games) %{_localstatedir}/games/%{name}.sco
+%attr(0664,root,games) %{_localstatedir}/lib/games/%{name}.sco
 %{_mandir}/man6/*
 #%{_datadir}/gnome/apps/Games/%{name}.desktop
 %{_datadir}/pixmaps/*
