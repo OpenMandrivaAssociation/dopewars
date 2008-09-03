@@ -1,6 +1,6 @@
 %define name    dopewars
 %define version 1.5.12
-%define release %mkrel 6
+%define release %mkrel 7
 
 %define title       Dopewars
 %define longtitle   Make a fortune dealing drugs on the streets of New York
@@ -42,10 +42,9 @@ switches (via dopewars -h) for further information.
 %prep
 %setup -q
 %patch1 -p1
-perl -p -i -e 's|DPDATADIR|\"%{_datadir}\"|' src/dopewars.c  
 
 %build
-%configure  --bindir=%{_gamesbindir} \
+%configure2_5x  --bindir=%{_gamesbindir} \
         --datadir=%{_gamesdatadir} \
         --localstatedir=/var/lib/games
 %make
@@ -54,7 +53,7 @@ perl -p -i -e 's|DPDATADIR|\"%{_datadir}\"|' src/dopewars.c
 rm -rf %{buildroot}
 %{makeinstall_std}
 install -d %{buildroot}{%{_gamesdatadir},%{_sysconfdir},%{_localstatedir}/lib/games}
-mv %{buildroot}%{_gamesdatadir}/{doc,gnome,locale,pixmaps} $RPM_BUILD_ROOT%{_datadir}/
+mv %{buildroot}%{_gamesdatadir}/{doc,gnome,locale,pixmaps} %{buildroot}%{_datadir}/
 install -m 644 doc/example-cfg  %{buildroot}%{_sysconfdir}/%{name}
 
 %{find_lang} %{name}
@@ -66,7 +65,8 @@ install -m644 %{SOURCE13} -D %{buildroot}%{_liconsdir}/%{name}.png
 
 # menu entry
 mkdir -p %{buildroot}/usr/share/applications
-mv %{buildroot}%{_datadir}/gnome/apps/Games/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+mv %{buildroot}%{_datadir}/gnome/apps/Games/%{name}.desktop \
+    %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 perl -pi -e 's,%{name}-weed.png,%{name}-weed,g' %{buildroot}%{_datadir}/applications/*
 
@@ -75,21 +75,7 @@ recode ISO-8859-15..UTF-8 %{buildroot}%{_datadir}/applications/%{name}.desktop
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-category="Game;StrategyGame" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
-
-#install -d -m 755 %{buildroot}%{_datadir}/applications
-#cat >  %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
-#[Desktop Entry]
-#Encoding=UTF-8
-#Name=%{title}
-#Comment=%{longtitle}
-#Exec=%{_gamesbindir}/%{name}
-#Icon=%{name}
-#Terminal=false
-#Type=Application
-#StartupNotify=false
-#Categories=Game;StrategyGame
-#EOF
+  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 # create highscore file
 install -d %{buildroot}%{_localstatedir}/lib/games
@@ -117,7 +103,6 @@ rm -rf %{buildroot}
 %attr(2755,root,games) %{_gamesbindir}/dopewars
 %attr(0664,root,games) %{_localstatedir}/lib/games/%{name}.sco
 %{_mandir}/man6/*
-#%{_datadir}/gnome/apps/Games/%{name}.desktop
 %{_datadir}/pixmaps/*
 %{_gamesdatadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
