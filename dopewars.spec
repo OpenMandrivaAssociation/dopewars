@@ -1,6 +1,6 @@
 %define name    dopewars
 %define version 1.5.12
-%define release %mkrel 7
+%define release %mkrel 8
 
 %define title       Dopewars
 %define longtitle   Make a fortune dealing drugs on the streets of New York
