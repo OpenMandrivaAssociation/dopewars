@@ -1,6 +1,6 @@
 %define name    dopewars
 %define version 1.5.12
-%define release %mkrel 8
+%define release %mkrel 9
 
 %define title       Dopewars
 %define longtitle   Make a fortune dealing drugs on the streets of New York
@@ -17,6 +17,7 @@ Source11:       %{name}-16.png
 Source12:       %{name}-32.png
 Source13:       %{name}-48.png
 Patch1:         %{name}-1.5.10-config.patch
+Patch2:         dopewars-1.5.12-fix-format-errors.patch
 BuildRequires:  gtk+2-devel
 BuildRequires:  ncurses-devel
 BuildRequires:  SDL-devel
@@ -42,6 +43,7 @@ switches (via dopewars -h) for further information.
 %prep
 %setup -q
 %patch1 -p1
+%patch2 -p1
 
 %build
 %configure2_5x  --bindir=%{_gamesbindir} \
