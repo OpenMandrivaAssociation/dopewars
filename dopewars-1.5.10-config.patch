@@ -1,0 +1,11 @@
+--- dopewars-1.5.10/doc/example-cfg.orig	2003-07-28 16:35:06.000000000 +0200
++++ dopewars-1.5.10/doc/example-cfg	2004-11-10 20:04:49.252524780 +0100
+@@ -13,7 +13,7 @@ MaxClients= 6
+    double-quotes can also be used, but these interpret C-style escape
+    sequences (like \t for a tab character) and so should be avoided, e.g, for
+    Windows path names) */
+-HiScoreFile= '/var/lib/games/dopewars.sco'
++#HiScoreFile= '/var/lib/games/dopewars.sco'
+ 
+ # An example of setting a string list value
+ StoppedTo = { 'drink a beer', 'visit a friend',
