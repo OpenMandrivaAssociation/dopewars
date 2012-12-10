@@ -111,3 +111,124 @@ rm -rf %{buildroot}
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
+
+
+%changelog
+* Thu Dec 09 2010 Oden Eriksson <oeriksson@mandriva.com> 1.5.12-10mdv2011.0
++ Revision: 617873
+- the mass rebuild of 2010.0 packages
+
+* Sun Sep 13 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.12-9mdv2010.0
++ Revision: 438703
+- fix format errors
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+
+* Wed Sep 03 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.12-7mdv2009.0
++ Revision: 279983
+- fix sound file location (fix #43026)
+
+* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 1.5.12-6mdv2009.0
++ Revision: 244476
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+    - adapt to %%_localstatedir now being /var instead of /var/lib (#22312)
+
+* Tue Feb 12 2008 Thierry Vignaud <tv@mandriva.org> 1.5.12-4mdv2008.1
++ Revision: 166599
+- fix description-line-too-long
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Thu Sep 13 2007 Emmanuel Andry <eandry@mandriva.org> 1.5.12-4mdv2008.0
++ Revision: 85308
+- bump release
+- buildrequires recode
+- uncompress patch
+- use provided desktop file
+- convert desktop file to UTF8
+- remove icon extension in desktop file
+- Import dopewars
+
+
+
+* Tue Aug 01 2006 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.12-2mdv2007.0
+- xdg menu
+
+* Thu Jan 05 2006 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.12-1mdk
+- New release 1.5.12
+
+* Mon Dec 12 2005 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.10-3mdk
+- Fixes from Anssi Hannula (<anssi.hannula@gmail.com>): 
+ - fix BuildRequires
+ - fix menudir
+ - %%mkrel
+- spec cleanup 
+
+* Fri Dec 03 2004 David Walluck <walluck@mandrake.org> 1.5.10-2mdk
+- fix local HTML doc link
+
+* Wed Nov 10 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.5.10-1mdk
+- 1.5.10
+- drop P0, no need
+- regenerate P1
+
+* Thu Aug 26 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.5.9-5mdk
+- rebuild for new menu
+- don't bzip2 icons in src.rpm
+
+* Fri Jul 09 2004 Guillaume Rousse <guillomovitch@mandrake.org> 1.5.9-4mdk 
+- rpmbuilupdate aware
+- fixed menu category
+- fixed buildrequires syntax
+
+* Sun Jul 27 2003 Guillaume Rousse <guillomovitch@linux-mandrake.com> 1.5.9-3mdk
+- fix configuration file problem
+- fix high-score file problem
+- fix executable perms
+
+* Fri Jul 25 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 1.5.9-2mdk
+- rebuild
+- change summary macro to avoid possible conflicts if we were to build debug package
+
+* Wed Jun 11 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 1.5.9-1mdk
+- 1.5.9
+
+* Sat Jan 24 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 1.5.8-2mdk
+- Create highscore file in install stage instead, no need for ghost file, and
+  rpmlint gets happy:)
+- Remove unneeded redundancy
+- Don't rm -rf buildroot and install icons in prep stage, don't delete docs in
+  install, (now possible to use --short-circuit)
+- Quiet setup
+- Make rpmlint more happy, longtitle, etc.
+- Cleanups
+
+* Sat Jan 04 2003 Guillaume Rousse <g.rousse@linux-mandrake.com> 1.5.8-1mdk
+- 1.5.8
+
+* Fri Aug 16 2002 Götz Waschk <waschk@linux-mandrake.com> 1.5.7-2mdk
+- rebuild with new vorbis and gcc 3.2
+
+* Wed Jun 26 2002 Guillaume Rousse <g.rousse@linux-mandrake.com> 1.5.7-1mdk
+- 1.5.7
+- menu entry
+- config file
+- better high score file handling
+- more explicit summary :-)
+
+* Fri Oct 26 2001 Guillaume Rousse <g.rousse@linux-mandrake.com> 1.5.2-2mdk
+- new in contribs
+- removed lurking cvs file
+
+* Wed Oct 17 2001 Guillaume Rousse <g.rousse@linux-mandrake.com> 1.5.2-1mdk
+- 1.5.2
+- s/Copyright/License
+
+* Tue May 15 2001 Guillaume Rousse <g.rousse@linux-mandrake.com> 1.5.0-1mdk
+- first Mandrake release
