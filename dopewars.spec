@@ -1,6 +1,6 @@
 %define name    dopewars
 %define version 1.5.12
-%define release %mkrel 10
+%define release 11
 
 %define title       Dopewars
 %define longtitle   Make a fortune dealing drugs on the streets of New York
@@ -49,7 +49,7 @@ switches (via dopewars -h) for further information.
 %configure2_5x  --bindir=%{_gamesbindir} \
         --datadir=%{_gamesdatadir} \
         --localstatedir=/var/lib/games
-%make
+make
 
 %install
 rm -rf %{buildroot}
