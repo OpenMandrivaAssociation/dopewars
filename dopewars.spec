@@ -11,7 +11,7 @@ Release:        %{release}
 Summary:        Make a fortune dealing drugs on the streets of New York
 License:        GPL
 Group:          Games/Strategy
-URL:            http://dopewars.sourceforge.net/
+URL:            https://dopewars.sourceforge.net/
 Source0:        http://prdownloads.sourceforge.net/dopewars/%{name}-%{version}.tar.bz2
 Source11:       %{name}-16.png
 Source12:       %{name}-32.png
