@@ -18,6 +18,11 @@ Source12:       %{name}-32.png
 Source13:       %{name}-48.png
 Patch1:         %{name}-1.5.10-config.patch
 Patch2:         dopewars-1.5.12-fix-format-errors.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  gtk+2-devel
 BuildRequires:  ncurses-devel
 BuildRequires:  SDL-devel
